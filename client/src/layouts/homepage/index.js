@@ -92,7 +92,7 @@ function Homepage() {
       </div>
       <div className="form__triangle--top" />
       <div className="contact-form">
-        <h4>Build something</h4>
+        <h3>Build something</h3>
         <p>
           Put the potentially record low maximum sea ice extent tihs year down to low ice. According
           to the National Oceanic and Atmospheric Administration, Ted, Scambos.
@@ -126,36 +126,36 @@ function Homepage() {
       </div>
       <div className="form__triangle--bottom" />
       <footer>
-        <div className="column">
-          <h4>Lets keep in touch</h4>
-          <p>Find us on any of the platforms</p>
-          <div className="link-row">
+        <div className="row">
+          <div className="column footer__links">
+            <h6>USEFUL LINKS</h6>
             <ul>
-              <li>Twitter</li>
-              <li>Twitter</li>
-              <li>Twitter</li>
-              <li>Twitter</li>
+              <li>About us</li>
+              <li>Blog</li>
+              <li>Github</li>
+            </ul>
+          </div>
+          <div className="column footer__links">
+            <h6>OTHER RESOURCES</h6>
+            <ul>
+              <li>MIT License</li>
+              <li>Terns & Conditions</li>
+              <li>Privacy Policy</li>
+            </ul>
+          </div>
+          <div className="column footer__section">
+            <h4>Lets keep in touch</h4>
+            <p>Find us on any of the platforms</p>
+            <ul className="link-row">
+              <li>icon</li>
+              <li>icon</li>
+              <li>icon</li>
+              <li>icon</li>
             </ul>
           </div>
         </div>
-        <div className="column">
-          <h4>USEFUL LINKS</h4>
-          <ul>
-            <li>About us</li>
-            <li>Blog</li>
-            <li>Github</li>
-          </ul>
-        </div>
-        <div className="column">
-          <h4>OTHER RESOURCES</h4>
-          <ul>
-            <li>MIT License</li>
-            <li>Terns & Conditions</li>
-            <li>Privacy Policy</li>
-          </ul>
-        </div>
         <hr />
-        <p>Copyright © 2020 Tailwind Starter Kit by Creative Tim.</p>
+        <p className="copyright">Copyright © 2020 Tailwind Starter Kit by Creative Tim.</p>
       </footer>
     </div>
   );
