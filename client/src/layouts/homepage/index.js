@@ -1,3 +1,5 @@
+import "./homepage.css";
+
 function Homepage() {
   return (
     <div className="container">
@@ -11,62 +13,72 @@ function Homepage() {
             <a href="/authentication/sign-up">Sign up</a>
           </div>
         </div>
-        <h1>Your story starts with us.</h1>
-        <p>
-          This is a simple example of a Landing Page you can build using Tailwind Starter Kit. It
-          features multiple CSS components based on the Tailwindcss design system.
-        </p>
+        <div className="splash__text">
+          <h1>Your story starts with us.</h1>
+          <p>
+            This is a simple example of a Landing Page you can build using Tailwind Starter Kit. It
+            features multiple CSS components based on the Tailwindcss design system.
+          </p>
+        </div>
+        <div className="info__triangle--top" />
       </div>
-      <div className="cards">
-        <div className="card">
-          <h3>Awarded Agency</h3>
-          <p>
-            Divide details about your product or agency work into parts. A paragraph describing a
-            feature will be enough.
-          </p>
-        </div>
-        <div className="card">
-          <h3>Free Revisions</h3>
-          <p>
-            Divide details about your product or agency work into parts. A paragraph describing a
-            feature will be enough.
-          </p>
-        </div>
-        <div className="card">
-          <h3>Verified Company</h3>
-          <p>
-            Divide details about your product or agency work into parts. A paragraph describing a
-            feature will be enough.
-          </p>
-        </div>
-      </div>
-      <div className="info">
-        <div className="info__text">
-          <h2>Working with us is a pleasure</h2>
-          <p>
-            Don&apos;t let your uses guess by attaching tooltips and popoves to any element. Just
-            make sure you enable them first via JavaScript. The kit comes with three pre-built pages
-            pages help you get started faster. You can change the text and images and you&apos;re
-            Just make sure you enable them first via JavaScript.
-          </p>
-        </div>
-        <div className="info__color-card">
-          <img src="" alt="" />
-          <div>
-            <h3>Top Notch Services</h3>
-            <p>
-              The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer,
-              and that process will continue whatever happens.
+      <div className="info--grey">
+        <div className="cards">
+          <div className="card">
+            <h6 className="card__title">Awarded Agency</h6>
+            <p className="card__description">
+              Divide details about your product or agency work into parts. A paragraph describing a
+              feature will be enough.
+            </p>
+          </div>
+          <div className="card">
+            <h6 className="card__title">Free Revisions</h6>
+            <p className="card__description">
+              Divide details about your product or agency work into parts. A paragraph describing a
+              feature will be enough.
+            </p>
+          </div>
+          <div className="card">
+            <h6 className="card__title">Verified Company</h6>
+            <p className="card__description">
+              Divide details about your product or agency work into parts. A paragraph describing a
+              feature will be enough.
             </p>
           </div>
         </div>
-      </div>
-      <div className="info">
-        <div>
-          <img src="" alt="" />
+        <div className="split">
+          <div className="info__text">
+            <h4>Working with us is a pleasure</h4>
+            <p>
+              Don&apos;t let your uses guess by attaching tooltips and popoves to any element. Just
+              make sure you enable them first via JavaScript.
+            </p>
+            <p>
+              The kit comes with three pre-built pages help you get started faster. You can change
+              the text and images and you&apos;re Just make sure you enable them first via
+              JavaScript.
+            </p>
+          </div>
+          <div className="info__color-card">
+            <div className="color-card__image" />
+            <div className="triangle--card" />
+            <div className="color-card__text">
+              <h4>Top Notch Services</h4>
+              <p>
+                The Arctic Ocean freezes every winter and much of the sea-ice then thaws every
+                summer, and that process will continue whatever happens.
+              </p>
+            </div>
+          </div>
         </div>
-        <div>
-          <h2>A Growing Company</h2>
+      </div>
+      <div className="info__triangle--bottom" />
+      <div className="info--white split">
+        <div className="image-placeholder">
+          <p> </p>
+        </div>
+        <div className="info__text">
+          <h4>A Growing Company</h4>
           <p>
             The extension comes with three pre-built pages to help you get started faster. You can
             change the text and images and youre good to go.
@@ -78,29 +90,30 @@ function Homepage() {
           </ul>
         </div>
       </div>
+      <div className="form__triangle--top" />
       <div className="contact-form">
-        <h2>Build something</h2>
+        <h4>Build something</h4>
         <p>
           Put the potentially record low maximum sea ice extent tihs year down to low ice. According
           to the National Oceanic and Atmospheric Administration, Ted, Scambos.
         </p>
         <div className="contact-form__points">
           <div className="point">
-            <h3>Excelent Services</h3>
+            <h6>Excelent Services</h6>
             <p>
               Some quick example text to build on the card title and make up the bulk of the cards
               content.
             </p>
           </div>
           <div className="point">
-            <h3>Excelent Services</h3>
+            <h6>Excelent Services</h6>
             <p>
               Some quick example text to build on the card title and make up the bulk of the cards
               content.
             </p>
           </div>
           <div className="point">
-            <h3>Excelent Services</h3>
+            <h6>Excelent Services</h6>
             <p>
               Some quick example text to build on the card title and make up the bulk of the cards
               content.
@@ -111,9 +124,10 @@ function Homepage() {
           <p>form</p>
         </div>
       </div>
+      <div className="form__triangle--bottom" />
       <footer>
         <div className="column">
-          <h3>Lets keep in touch</h3>
+          <h4>Lets keep in touch</h4>
           <p>Find us on any of the platforms</p>
           <div className="link-row">
             <ul>
