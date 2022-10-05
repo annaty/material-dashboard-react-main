@@ -1,7 +1,7 @@
 {
   "name": "material-dashboard-2-react",
   "version": "2.1.0",
-  "proxy":"http://localhost:5000",
+  "proxy": "http://localhost:5000",
   "private": true,
   "author": "Creative Tim",
   "license": "See license in https://www.creative-tim.com/license",
@@ -27,6 +27,7 @@
     "@testing-library/jest-dom": "5.16.2",
     "@testing-library/react": "12.1.2",
     "@testing-library/user-event": "13.5.0",
+    "@typescript-eslint/parser": "^5.39.0",
     "chart.js": "3.4.1",
     "chroma-js": "2.4.2",
     "prop-types": "15.8.1",
