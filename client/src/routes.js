@@ -44,7 +44,7 @@ import Tables from "layouts/tables";
 import Billing from "layouts/billing";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
-import SignIn from "layouts/authentication/sign-in";
+import SignIn from "layouts/authentication/Login/Login";
 import SignUp from "layouts/authentication/sign-up";
 
 // @mui icons
@@ -101,10 +101,10 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Sign In",
-    key: "sign-in",
+    name: "Login",
+    key: "Login",
     icon: <Icon fontSize="small">login</Icon>,
-    route: "/authentication/sign-in",
+    route: "/authentication/Login",
     component: <SignIn />,
   },
   {
