@@ -88,21 +88,21 @@ a, a:visited, a:hover, a:active {
   }
 
 .info__triangle--top {
-    display : inline-block;
-    height : 0;
-    width : 0;
-    border-bottom : 100px solid #E2E8F0;
-    border-left : 100vw solid transparent;
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-bottom: 100px solid #E2E8F0;
+    border-left: 100vw solid transparent;
     margin-bottom: -10px;
     z-index: 15;
 }
 
 .info__triangle--bottom {
-    display : inline-block;
-    height : 0;
-    width : 0;
-    border-top : 100px solid #E2E8F0;
-    border-right : 100vw solid transparent;
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-top: 100px solid #E2E8F0;
+    border-right: 100vw solid transparent;
 }
 
 .splash__text h1 {
