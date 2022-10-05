@@ -16,7 +16,7 @@ Coded by www.creative-tim.com
 import { useState, useEffect } from "react";
 
 // react-router components
-import { Routes, Route, Navigate, useLocation, BrowserRouter } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 // @mui material components
 import { ThemeProvider } from "@mui/material/styles";
@@ -47,7 +47,6 @@ import brandWhite from "assets/images/logo-ct.png";
 import brandDark from "assets/images/logo-ct-dark.png";
 
 export default function App() {
-
   const [controller, dispatch] = useMaterialUIController();
   const {
     miniSidenav,
@@ -61,6 +60,7 @@ export default function App() {
   } = controller;
   const [onMouseEnter, setOnMouseEnter] = useState(false);
   const { pathname } = useLocation();
+  const menuRoutes = ["Dashboard", "Tables", "Billing", "Notifications"];
 
   // Open sidenav when mouse enter on mini sidenav
   const handleOnMouseEnter = () => {
@@ -138,7 +138,7 @@ export default function App() {
             color={sidenavColor}
             brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
             brandName="Material Dashboard 2"
-            routes={routes}
+            routes={routes.filter((route) => menuRoutes.includes(route.name))}
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}
           />
