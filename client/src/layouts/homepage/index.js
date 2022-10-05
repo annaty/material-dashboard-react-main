@@ -1,5 +1,6 @@
 /* eslint-disable global-require */
 import "./homepage.css";
+import React from "react";
 
 function Homepage() {
   return (

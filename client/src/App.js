@@ -16,7 +16,7 @@ Coded by www.creative-tim.com
 import { useState, useEffect } from "react";
 
 // react-router components
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation, BrowserRouter } from "react-router-dom";
 
 // @mui material components
 import { ThemeProvider } from "@mui/material/styles";
@@ -47,6 +47,7 @@ import brandWhite from "assets/images/logo-ct.png";
 import brandDark from "assets/images/logo-ct-dark.png";
 
 export default function App() {
+
   const [controller, dispatch] = useMaterialUIController();
   const {
     miniSidenav,
