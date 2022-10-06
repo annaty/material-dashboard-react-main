@@ -1,17 +1,28 @@
-/**
-=========================================================
-* Material Dashboard 2 React - v2.1.0
-=========================================================
+import moment from "moment";
+// api céréales
 
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'd08893056dmshc405a10f84f98f6p19b00ejsnaef27bf67060',
+		'X-RapidAPI-Host': 'futures.p.rapidapi.com'
+	}
+};
 
-Coded by www.creative-tim.com
+const url = 'https://futures.p.rapidapi.com/days-from?symbol=CL&dateFrom=2021-12-25&daysFrom=30&month=7&inPast=true&format=json'
 
- =========================================================
+fetch(url , options)
+	.then(response => response.json())
+	.then(response => {
+    console.log(response)
+    var Ble = response.data[0].last
+    console.log(Ble)
+  })
+	.catch(err => console.error(err));
 
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
+var Ble= 352.75;
+var Colza = 578;
+var Maïs = 430;
 
 export default {
   sales: {
@@ -19,7 +30,9 @@ export default {
     datasets: { label: "Mobile apps", data: [50, 40, 300, 320, 500, 350, 200, 230, 500] },
   },
   tasks: {
-    labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-    datasets: { label: "Desktop apps", data: [50, 40, 300, 220, 500, 250, 400, 230, 500] },
+    labels: [ "Blé" ,"Colza", "Houblon"],
+    datasets: { label: "Desktop apps", data: [Ble,Colza, Maïs] },
   },
+  localDate: moment().format('MMMM Do YYYY, hh:mm:ss'),
 };
+
