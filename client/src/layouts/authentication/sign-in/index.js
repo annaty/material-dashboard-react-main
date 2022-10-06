@@ -50,16 +50,14 @@ function Basic() {
 
   const handleOnSubmit = (e) => {
     const payload = { email, pw };
-    fetch(
-      new Request("http://localhost:5000/api", {
-        method: "post",
-        body: payload,
-        headers: {
-          Accept: "application/json, text/plain, */*",
-          "Content-Type": "application/json",
-        },
-      })
-    )
+    fetch("http://localhost:5000/api", {
+      method: "post",
+      body: payload,
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+    })
       .then((res) => {
         if (res.status === (200 || 304)) {
           return res.json();
