@@ -22,9 +22,12 @@ import MDAvatar from "components/MDAvatar";
 import MDBadge from "components/MDBadge";
 
 // Images
-import team2 from "assets/images/team-2.jpg";
-import team3 from "assets/images/team-3.jpg";
-import team4 from "assets/images/team-4.jpg";
+import fence from "assets/images/logos/fence.png";
+import irrigation from "assets/images/logos/irrigation.png";
+import solarPanel from "assets/images/logos/solar-panel.png";
+import streetLight from "assets/images/logos/street-light.png";
+import tractor from "assets/images/logos/tractor.png";
+import windPower from "assets/images/logos/wind-power.png";
 
 export default function data() {
   const Author = ({ image, name, email }) => (
@@ -50,16 +53,15 @@ export default function data() {
 
   return {
     columns: [
-      { Header: "author", accessor: "author", width: "45%", align: "left" },
-      { Header: "function", accessor: "function", align: "left" },
+      { Header: "type d'équipements", accessor: "author", width: "45%", align: "left" },
       { Header: "status", accessor: "status", align: "center" },
-      { Header: "employed", accessor: "employed", align: "center" },
+      { Header: "Date équipement", accessor: "employed", align: "center" },
       { Header: "action", accessor: "action", align: "center" },
     ],
 
     rows: [
       {
-        author: <Author image={team2} name="John Michael" email="john@creative-tim.com" />,
+        author: <Author image={tractor} name="Tracteur"/>,
         function: <Job title="Manager" description="Organization" />,
         status: (
           <MDBox ml={-1}>
@@ -78,7 +80,7 @@ export default function data() {
         ),
       },
       {
-        author: <Author image={team3} name="Alexa Liras" email="alexa@creative-tim.com" />,
+        author: <Author image={fence} name="Portail"/>,
         function: <Job title="Programator" description="Developer" />,
         status: (
           <MDBox ml={-1}>
@@ -97,7 +99,7 @@ export default function data() {
         ),
       },
       {
-        author: <Author image={team4} name="Laurent Perrier" email="laurent@creative-tim.com" />,
+        author: <Author image={irrigation} name="Arrosage"/>,
         function: <Job title="Executive" description="Projects" />,
         status: (
           <MDBox ml={-1}>
@@ -116,7 +118,7 @@ export default function data() {
         ),
       },
       {
-        author: <Author image={team3} name="Michael Levi" email="michael@creative-tim.com" />,
+        author: <Author image={streetLight} name="Lumière"/>,
         function: <Job title="Programator" description="Developer" />,
         status: (
           <MDBox ml={-1}>
@@ -135,7 +137,7 @@ export default function data() {
         ),
       },
       {
-        author: <Author image={team3} name="Richard Gran" email="richard@creative-tim.com" />,
+        author: <Author image={windPower} name="Eolienne"/>,
         function: <Job title="Manager" description="Executive" />,
         status: (
           <MDBox ml={-1}>
@@ -154,7 +156,7 @@ export default function data() {
         ),
       },
       {
-        author: <Author image={team4} name="Miriam Eric" email="miriam@creative-tim.com" />,
+        author: <Author image={solarPanel} name="Panneau solaire"/>,
         function: <Job title="Programator" description="Developer" />,
         status: (
           <MDBox ml={-1}>
