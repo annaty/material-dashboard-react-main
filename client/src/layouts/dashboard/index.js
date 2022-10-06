@@ -85,13 +85,13 @@ function Dashboard() {
               <MDBox mb={3}>
                 <ReportsLineChart
                   color="success"
-                  title="daily sales"
+                  title="Stockage récolte"
                   description={
                     <>
-                      (<strong>+15%</strong>) increase in today sales.
+                      en t
                     </>
                   }
-                  date="updated 4 min ago"
+                  date= "6 derniers mois"
                   chart={sales}
                 />
               </MDBox>

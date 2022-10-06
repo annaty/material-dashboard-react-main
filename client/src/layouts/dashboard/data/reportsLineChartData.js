@@ -26,8 +26,8 @@ var Maïs = 430;
 
 export default {
   sales: {
-    labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-    datasets: { label: "Mobile apps", data: [50, 40, 300, 320, 500, 350, 200, 230, 500] },
+    labels: ["Mai", "Jui", "Juil", "Aout", "Sep", "Oct"],
+    datasets: { label: "Mobile apps", data: [15, 22, 15, 8, 15, 25] },
   },
   tasks: {
     labels: [ "Blé" ,"Colza", "Houblon"],
