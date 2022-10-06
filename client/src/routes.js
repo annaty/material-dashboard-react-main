@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 /**
 =========================================================
 * Material Dashboard 2 React - v2.1.0
@@ -36,19 +37,28 @@ Coded by www.creative-tim.com
 */
 
 // Material Dashboard 2 React layouts
+// eslint-disable-next-line import/no-unresolved
+import Homepage from "layouts/homepage";
 import Dashboard from "layouts/dashboard";
 import Tables from "layouts/tables";
 import Billing from "layouts/billing";
-import RTL from "layouts/rtl";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
-import SignIn from "layouts/authentication/sign-in";
+import SignIn from "layouts/authentication/Login/Login";
 import SignUp from "layouts/authentication/sign-up";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
 
 const routes = [
+  {
+    type: "collapse",
+    name: "Home",
+    key: "home",
+    icon: <Icon fontSize="small">dashboard</Icon>,
+    route: "/home",
+    component: <Homepage />,
+  },
   {
     type: "collapse",
     name: "Dashboard",
@@ -75,14 +85,6 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "RTL",
-    key: "rtl",
-    icon: <Icon fontSize="small">format_textdirection_r_to_l</Icon>,
-    route: "/rtl",
-    component: <RTL />,
-  },
-  {
-    type: "collapse",
     name: "Notifications",
     key: "notifications",
     icon: <Icon fontSize="small">notifications</Icon>,
@@ -99,10 +101,10 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Sign In",
-    key: "sign-in",
+    name: "Login",
+    key: "Login",
     icon: <Icon fontSize="small">login</Icon>,
-    route: "/authentication/sign-in",
+    route: "/Login",
     component: <SignIn />,
   },
   {

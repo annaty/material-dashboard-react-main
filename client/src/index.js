@@ -21,11 +21,22 @@ import App from "App";
 // Material Dashboard 2 React Context Provider
 import { MaterialUIControllerProvider } from "context";
 
-ReactDOM.render(
-  <BrowserRouter>
-    <MaterialUIControllerProvider>
-      <App />
-    </MaterialUIControllerProvider>
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+if (window.location.pathname === "/home") {
+  ReactDOM.render(
+    <BrowserRouter>
+      <MaterialUIControllerProvider>
+        <App />
+      </MaterialUIControllerProvider>
+    </BrowserRouter>,
+    document.getElementById("root")
+  );
+} else {
+  ReactDOM.render(
+    <BrowserRouter>
+      <MaterialUIControllerProvider>
+        <App />
+      </MaterialUIControllerProvider>
+    </BrowserRouter>,
+    document.getElementById("root")
+  );
+}
