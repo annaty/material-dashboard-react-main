@@ -9,15 +9,6 @@ class Login extends React.Component {
       psw: "",
     };
 
-    this.request = new Request("http://localhost:5000/api", {
-      method: "post",
-      body: JSON.stringify(this.state),
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-    });
-
     this.handleOnChangeEmail = (e) => {
       this.email = e;
     };
@@ -27,7 +18,14 @@ class Login extends React.Component {
     };
 
     this.handleOnSubmit = (e) => {
-      fetch(this.request)
+      fetch("http://localhost:5000/api", {
+        method: "post",
+        body: JSON.stringify(this.state),
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+      })
         .then((res) => {
           if (res.status === 200) {
             console.log(e);
