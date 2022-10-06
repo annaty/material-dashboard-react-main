@@ -66,7 +66,7 @@ export default function App() {
   } = controller;
   const [onMouseEnter, setOnMouseEnter] = useState(false);
   const { pathname } = useLocation();
-  const menuRoutes = ["Dashboard", "Tables", "Billing", "Notifications"];
+  const menuRoutes = ["Dashboard", "Tables", "Notifications"];
 
   // Open sidenav when mouse enter on mini sidenav
   const handleOnMouseEnter = () => {
