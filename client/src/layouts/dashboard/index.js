@@ -33,11 +33,6 @@ import reportsLineChartData from "layouts/dashboard/data/reportsLineChartData";
 import Button from "@mui/material/Button";
 import {useState} from 'react';
 
-<<<<<<< HEAD
-// api céréales
-
-=======
->>>>>>> aaab4600639bde5a63068a2484b8168b2cb0884e
 function Dashboard() {
   const { sales, tasks, localDate } = reportsLineChartData;
 
