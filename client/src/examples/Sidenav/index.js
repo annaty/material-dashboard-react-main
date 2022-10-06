@@ -189,8 +189,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
       <MDBox p={2} mt="auto">
         <MDButton
           component="a"
-          href="https://www.creative-tim.com/product/material-dashboard-pro-react"
-          target="_blank"
+          href="http://localhost:3000/home"
           rel="noreferrer"
           variant="gradient"
           color={sidenavColor}

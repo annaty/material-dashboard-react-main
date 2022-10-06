@@ -16,7 +16,7 @@ function Homepage() {
                 <img src={require("../../assets/images/logo.png")} alt="logo" />
               </div>
               <div className="links">
-                <a href="/Login">SE CONNECTER</a>
+                <a href="/authentication/sign-in">SE CONNECTER</a>
                 <a href="/authentication/sign-up">S&apos;ENREGISTRER</a>
               </div>
             </div>
