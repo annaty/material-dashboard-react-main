@@ -22,6 +22,8 @@ import Grid from "@mui/material/Grid";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
+import MDTypography from "components/MDTypography";
+import MDButton from "components/MDButton";
 
 // Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
@@ -35,15 +37,14 @@ import reportsLineChartData from "layouts/dashboard/data/reportsLineChartData";
 
 // Dashboard components
 import Projects from "layouts/dashboard/components/Projects";
-import Button from "@mui/material/Button";
-import {useState} from 'react';
+import { useState } from "react";
 
 function Dashboard() {
   const { sales, tasks, localDate } = reportsLineChartData;
 
   const [isActive, setIsActive] = useState(false);
   const [isActive2, setIsActive2] = useState(false);
-  const [isActive3, setIsActive3] = useState(false);
+  const [isActive3, setIsActive3] = useState(true);
 
   const handleClick = () => {
     // 👇️ toggle
@@ -119,6 +120,91 @@ function Dashboard() {
             </Grid>
           </Grid>
         </MDBox>
+        <MDBox className="button-container">
+          <Grid container spacing={3} className="grid-container">
+            <Grid item xs={12} md={12} lg={12}>
+              <MDBox>
+                <MDTypography variant="h6">Équipements favoris</MDTypography>
+              </MDBox>
+            </Grid>
+            <Grid item xs={12} md={6} lg={3}>
+              <MDBox tabIndex={0} role="button" onClick={handleClick} className="card" mb={3}>
+                <MDButton
+                  className="card-button"
+                  color={isActive ? "info" : "error"}
+                  variant="gradient"
+                  fullWidth
+                >
+                  <img
+                    src={require("../../assets/images/lamp.png")}
+                    className="icon"
+                    alt="tractor"
+                  />
+                  <MDTypography variant="h4" color="white" gutterBottom>
+                    Lampe entrée
+                  </MDTypography>
+                  {isActive ? "Activé" : "Desactivé"}
+                </MDButton>
+              </MDBox>
+            </Grid>
+            <Grid item xs={12} md={6} lg={3}>
+              <MDBox tabIndex={0} role="button" onClick={handleClick2} className="card" mb={3}>
+                <MDButton
+                  className="card-button"
+                  color={isActive2 ? "success" : "error"}
+                  variant="gradient"
+                  fullWidth
+                >
+                  <img
+                    src={require("../../assets/images/tractor-white.png")}
+                    className="icon"
+                    alt="tractor"
+                  />
+                  <MDTypography variant="h4" color="white" gutterBottom>
+                    Tracteur Toyota
+                  </MDTypography>
+                  {isActive2 ? "Deverouillé" : "Verouillé"}
+                </MDButton>
+              </MDBox>
+            </Grid>
+            <Grid item xs={12} md={6} lg={3}>
+              <MDBox tabIndex={0} role="button" onClick={handleClick3} className="card" mb={3}>
+                <MDButton
+                  className="card-button"
+                  color={isActive3 ? "info" : "error"}
+                  variant="gradient"
+                  fullWidth
+                >
+                  <img
+                    src={require("../../assets/images/sprinkler.png")}
+                    className="icon"
+                    alt="tractor"
+                  />
+                  <MDTypography variant="h4" color="white" gutterBottom>
+                    Arrossage patates
+                  </MDTypography>
+                  {isActive3 ? "Activé" : "Desactivé"}
+                </MDButton>
+              </MDBox>
+            </Grid>
+            <Grid item xs={12} md={6} lg={2} className="add-item">
+              <MDBox mb={3}>
+                <MDButton className="card-button" color="secondary" variant="gradient" fullWidth>
+                  <MDBox
+                    component="img"
+                    src={require("../../assets/images/plus.png")}
+                    alt="more"
+                    width="1rem"
+                    className="more"
+                  />
+                  <MDTypography variant="h6" color="white" gutterBottom>
+                    Ajouter
+                  </MDTypography>
+                </MDButton>
+              </MDBox>
+            </Grid>
+          </Grid>
+        </MDBox>
         <MDBox>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6} lg={8}>
@@ -129,80 +215,6 @@ function Dashboard() {
                 <img alt="weather widget" src={require("../../assets/images/weather.png")} />
               </div>
             </Grid>
-          </Grid>
-        </MDBox>
-        <MDBox>
-          <Grid item xs={12} md={6} lg={4}>
-            <MDBox mb={3}>
-              <Button>
-                <div>
-                  <div
-                    tabIndex={0}
-                    role="button"
-                    style={{
-                      backgroundColor: isActive ? "green" : "red",
-                      color: isActive ? "green" : "red",
-                    }}
-                    onClick={handleClick}
-                  >
-                    <img
-                      src={require("../../assets/images/tracteur.png")}
-                      width={325}
-                      height={325}
-                      alt="tractor"
-                    />
-                  </div>
-                </div>
-              </Button>
-            </MDBox>
-          </Grid>
-          <Grid item xs={12} md={6} lg={4}>
-            <MDBox mb={3}>
-              <Button>
-                <div>
-                  <div
-                    tabIndex={0}
-                    role="button"
-                    style={{
-                      backgroundColor: isActive2 ? "green" : "red",
-                      color: isActive2 ? "green" : "red",
-                    }}
-                    onClick={handleClick2}
-                  >
-                    <img
-                      src={require("../../assets/images/pulverisateur.png")}
-                      width={325}
-                      height={325}
-                      alt="irrigation"
-                    />
-                  </div>
-                </div>
-              </Button>
-            </MDBox>
-          </Grid>
-          <Grid item xs={12} md={6} lg={4}>
-            <MDBox mb={3}>
-              <Button>
-                <div>
-                  <div
-                    tabIndex={0}
-                    role="button"
-                    style={{
-                      backgroundColor: isActive3 ? "green" : "red",
-                      color: isActive3 ? "green" : "red",
-                    }}
-                    onClick={handleClick3}
-                  >
-                    <img
-                      src={require("../../assets/images/idee.png")}
-                      width={325}
-                      height={325}
-                      alt="lightbulb"
-                    />
-                  </div>
-                </div>
-              </Button>
-            </MDBox>
           </Grid>
         </MDBox>
       </MDBox>
