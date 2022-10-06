@@ -73,7 +73,7 @@ export default function data() {
         ),
       },
       {
-        companies: <Company image={streetLight} name="Eclairage" />,
+        companies: <Company image={streetLight} name="Éclairage" />,
         number: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
             30

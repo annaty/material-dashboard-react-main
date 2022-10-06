@@ -103,13 +103,7 @@ export default function App() {
       setSidenavColor(dispatch, "success");
       setWhiteSidenav(dispatch, true);
     }
-  });
-
-  useEffect(() => {
-    if (layout === "dashboard") {
-      setWhiteSidenav(dispatch, true);
-    }
-  });
+  }, [sidenavColor, whiteSidenav]);
 
   const getRoutes = (allRoutes) =>
     allRoutes.map((route) => {
