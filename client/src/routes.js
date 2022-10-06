@@ -47,6 +47,8 @@ import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/Login/Login";
 import SignUp from "layouts/authentication/sign-up";
 
+import { Redirect } from "react-router-dom";
+
 // @mui icons
 import Icon from "@mui/material/Icon";
 
