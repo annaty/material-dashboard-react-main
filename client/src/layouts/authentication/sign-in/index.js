@@ -1,24 +1,23 @@
+/* eslint-disable no-unused-vars */
 /**
 =========================================================
 * Material Dashboard 2 React - v2.1.0
 =========================================================
-
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
 * Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
 Coded by www.creative-tim.com
-
  =========================================================
-
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
+import { useState } from "react";
+
 // react-router-dom components
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // @mui material components
 import Card from "@mui/material/Card";
-import Checkbox from "@mui/material/Checkbox";
+import Switch from "@mui/material/Switch";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
@@ -27,90 +26,123 @@ import MDInput from "components/MDInput";
 import MDButton from "components/MDButton";
 
 // Authentication layout components
-import CoverLayout from "layouts/authentication/components/CoverLayout";
+import BasicLayout from "layouts/authentication/components/BasicLayout";
 
 // Images
-import bgImage from "assets/images/sign-up-bg.jpg";
+import bgImage from "assets/images/log-in-bg.jpg";
 
-function Cover() {
+function Basic() {
+  const [rememberMe, setRememberMe] = useState(false);
+  const [email, setEmail] = useState("");
+  const [pw, setPassword] = useState("");
+
+  const handleSetRememberMe = () => setRememberMe(!rememberMe);
+
+  const handleOnChangeEmail = (e) => {
+    setEmail(e);
+  };
+
+  const handleOnChangePassword = (e) => {
+    setPassword(e);
+  };
+
+  const navigate = useNavigate();
+
+  const handleOnSubmit = (e) => {
+    const payload = { email, pw };
+    fetch("http://localhost:5000/api", {
+      method: "post",
+      body: payload,
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        if (res.status === (200 || 304)) {
+          return res.json();
+        }
+        return "hello";
+      })
+      .catch((error) => error);
+    navigate("/dashboard");
+  };
+
   return (
-    <CoverLayout image={bgImage}>
+    <BasicLayout image={bgImage}>
       <Card>
         <MDBox
           variant="gradient"
           bgColor="success"
           borderRadius="lg"
-          coloredShadow="success"
+          coloredShadow="info"
           mx={2}
           mt={-3}
-          p={3}
+          p={2}
           mb={1}
           textAlign="center"
         >
           <MDTypography variant="h4" fontWeight="medium" color="white" mt={1}>
-            Rejoignez-nous dès aujourd&apos;hui
-          </MDTypography>
-          <MDTypography display="block" variant="button" color="white" my={1}>
-            Entrez votre e-mail et votre mot de passe pour vous inscrire
+            Se connecter
           </MDTypography>
         </MDBox>
         <MDBox pt={4} pb={3} px={3}>
           <MDBox component="form" role="form">
             <MDBox mb={2}>
-              <MDInput type="text" label="Nom" variant="standard" fullWidth />
+              <MDInput type="email" label="Email" fullWidth onChange={handleOnChangeEmail} />
             </MDBox>
             <MDBox mb={2}>
-              <MDInput type="email" label="E-mail" variant="standard" fullWidth />
-            </MDBox>
-            <MDBox mb={2}>
-              <MDInput type="password" label="Mot de passe" variant="standard" fullWidth />
+              <MDInput
+                type="password"
+                label="Password"
+                fullWidth
+                onChange={handleOnChangePassword}
+              />
             </MDBox>
             <MDBox display="flex" alignItems="center" ml={-1}>
-              <Checkbox />
+              <Switch checked={rememberMe} onChange={handleSetRememberMe} />
               <MDTypography
                 variant="button"
                 fontWeight="regular"
                 color="text"
+                onClick={handleSetRememberMe}
                 sx={{ cursor: "pointer", userSelect: "none", ml: -1 }}
               >
-                &nbsp;&nbsp;Je suis d&apos;accord avec les&nbsp;
-              </MDTypography>
-              <MDTypography
-                component="a"
-                href="#"
-                variant="button"
-                fontWeight="bold"
-                color="success"
-                textGradient
-              >
-                Termes et conditions
+                &nbsp;&nbsp;Se souvenir de moi
               </MDTypography>
             </MDBox>
             <MDBox mt={4} mb={1}>
-              <MDButton variant="gradient" color="success" fullWidth>
-                s&apos;enregistrer
+              <MDButton
+                variant="gradient"
+                color="success"
+                fullWidth
+                onClick={() => {
+                  handleOnSubmit();
+                }}
+              >
+                se connecter
               </MDButton>
             </MDBox>
             <MDBox mt={3} mb={1} textAlign="center">
               <MDTypography variant="button" color="text">
-                Vous possédez déjà un compte ?{" "}
+                Pas de compte ?{" "}
                 <MDTypography
                   component={Link}
-                  to="/authentication/sign-in"
+                  to="/authentication/sign-up"
                   variant="button"
                   color="success"
                   fontWeight="medium"
                   textGradient
                 >
-                  Se connecter
+                  S&apos;enregistrer
                 </MDTypography>
               </MDTypography>
             </MDBox>
           </MDBox>
         </MDBox>
       </Card>
-    </CoverLayout>
+    </BasicLayout>
   );
 }
 
-export default Cover;
+export default Basic;

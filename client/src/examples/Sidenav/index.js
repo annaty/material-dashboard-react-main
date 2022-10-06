@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 /**
 =========================================================
 * Material Dashboard 2 React - v2.1.0
@@ -37,7 +38,6 @@ import SidenavCollapse from "examples/Sidenav/SidenavCollapse";
 
 // Custom styles for the Sidenav
 import SidenavRoot from "examples/Sidenav/SidenavRoot";
-import sidenavLogoLabel from "examples/Sidenav/styles/sidenav";
 
 // Material Dashboard 2 React context
 import {
@@ -160,16 +160,23 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
             <Icon sx={{ fontWeight: "bold" }}>close</Icon>
           </MDTypography>
         </MDBox>
-        <MDBox component={NavLink} to="/" display="flex" alignItems="center">
-          {brand && <MDBox component="img" src={brand} alt="Brand" width="2rem" />}
+        <MDBox
+          component={NavLink}
+          to="/"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          {/* {brand && <MDBox component="img" src={brand} alt="Brand" width="2rem" />} */}
+          {/* <MDTypography component="h6" variant="button" fontWeight="medium" color={textColor}>
+            {brandName} 
+          </MDTypography> */}
           <MDBox
-            width={!brandName && "100%"}
-            sx={(theme) => sidenavLogoLabel(theme, { miniSidenav })}
-          >
-            <MDTypography component="h6" variant="button" fontWeight="medium" color={textColor}>
-              {brandName}
-            </MDTypography>
-          </MDBox>
+            component="img"
+            src={require("../../assets/images/logo.png")}
+            alt="Brand"
+            width="12rem"
+          />
         </MDBox>
       </MDBox>
       <Divider
@@ -182,8 +189,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
       <MDBox p={2} mt="auto">
         <MDButton
           component="a"
-          href="https://www.creative-tim.com/product/material-dashboard-pro-react"
-          target="_blank"
+          href="http://localhost:3000/home"
           rel="noreferrer"
           variant="gradient"
           color={sidenavColor}

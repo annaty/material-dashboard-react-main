@@ -33,8 +33,11 @@ import reportsLineChartData from "layouts/dashboard/data/reportsLineChartData";
 import Button from "@mui/material/Button";
 import {useState} from 'react';
 
+<<<<<<< HEAD
 // api céréales
 
+=======
+>>>>>>> aaab4600639bde5a63068a2484b8168b2cb0884e
 function Dashboard() {
   const { sales, tasks, localDate } = reportsLineChartData;
 
@@ -58,9 +61,9 @@ function Dashboard() {
               <MDBox mb={3}>
                 <ReportsBarChart
                   color="info"
-                  title="website views"
-                  description="Last Campaign Performance"
-                  date="campaign sent 2 days ago"
+                  title="Consommation électrique"
+                  description="données en kWh"
+                  date="3 - 9 octobre"
                   chart={reportsBarChartData}
                 />
               </MDBox>
@@ -86,11 +89,10 @@ function Dashboard() {
                   color="dark"
                   title="cour des céréales"
                   description={
-                   <> 
-                   (<strong>+3,00</strong>) Blé <strong>| </strong>
-                   (<strong>-1,00</strong>) Colza <strong>| </strong>
-                   (<strong>-13,50</strong>) Maïs
-                   </>
+                    <>
+                      (<strong>+3,00</strong>) Blé <strong>| </strong>(<strong>-1,00</strong>) Colza{" "}
+                      <strong>| </strong>(<strong>-13,50</strong>) Maïs
+                    </>
                   }
                   date={localDate}
                   chart={tasks}
