@@ -114,6 +114,7 @@ function DefaultNavbar({ transparent, light, action }) {
             src={require("../../../assets/images/logo.png")}
             alt="Brand"
             width="12rem"
+            sx={{ filter: "brightness(1.4)" }}
           />
         </MDBox>
         <MDBox color="inherit" display={{ xs: "none", lg: "flex" }} m={0} p={0}>

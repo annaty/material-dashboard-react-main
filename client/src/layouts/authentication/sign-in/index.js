@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
 =========================================================
 * Material Dashboard 2 React - v2.1.0
@@ -12,7 +13,7 @@ Coded by www.creative-tim.com
 import { useState } from "react";
 
 // react-router-dom components
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -32,8 +33,42 @@ import bgImage from "assets/images/log-in-bg.jpg";
 
 function Basic() {
   const [rememberMe, setRememberMe] = useState(false);
+  const [email, setEmail] = useState("");
+  const [pw, setPassword] = useState("");
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
+
+  const handleOnChangeEmail = (e) => {
+    setEmail(e);
+  };
+
+  const handleOnChangePassword = (e) => {
+    setPassword(e);
+  };
+
+  const navigate = useNavigate();
+
+  const handleOnSubmit = (e) => {
+    const payload = { email, pw };
+    fetch(
+      new Request("http://localhost:5000/api", {
+        method: "post",
+        body: payload,
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+      })
+    )
+      .then((res) => {
+        if (res.status === (200 || 304)) {
+          return res.json();
+        }
+        return "hello";
+      })
+      .catch((error) => error);
+    navigate("/dashboard");
+  };
 
   return (
     <BasicLayout image={bgImage}>
@@ -56,10 +91,15 @@ function Basic() {
         <MDBox pt={4} pb={3} px={3}>
           <MDBox component="form" role="form">
             <MDBox mb={2}>
-              <MDInput type="email" label="Email" fullWidth />
+              <MDInput type="email" label="Email" fullWidth onChange={handleOnChangeEmail} />
             </MDBox>
             <MDBox mb={2}>
-              <MDInput type="password" label="Password" fullWidth />
+              <MDInput
+                type="password"
+                label="Password"
+                fullWidth
+                onChange={handleOnChangePassword}
+              />
             </MDBox>
             <MDBox display="flex" alignItems="center" ml={-1}>
               <Switch checked={rememberMe} onChange={handleSetRememberMe} />
@@ -74,8 +114,15 @@ function Basic() {
               </MDTypography>
             </MDBox>
             <MDBox mt={4} mb={1}>
-              <MDButton variant="gradient" color="success" fullWidth>
-                sign in
+              <MDButton
+                variant="gradient"
+                color="success"
+                fullWidth
+                onClick={() => {
+                  handleOnSubmit();
+                }}
+              >
+                se connecter
               </MDButton>
             </MDBox>
             <MDBox mt={3} mb={1} textAlign="center">
