@@ -22,24 +22,31 @@ import MDBox from "components/MDBox";
 // Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Footer from "examples/Footer";
 import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
 import ReportsLineChart from "examples/Charts/LineCharts/ReportsLineChart";
-import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatisticsCard";
 
 // Data
 import reportsBarChartData from "layouts/dashboard/data/reportsBarChartData";
 import reportsLineChartData from "layouts/dashboard/data/reportsLineChartData";
 
 // Dashboard components
-import Projects from "layouts/dashboard/components/Projects";
-import OrdersOverview from "layouts/dashboard/components/OrdersOverview";
+import Button from "@mui/material/Button";
+import {useState} from 'react';
 
 // api céréales
-import { Component } from "react";
 
 function Dashboard() {
   const { sales, tasks, localDate } = reportsLineChartData;
+
+  const [isActive, setIsActive] = useState(false);
+
+  const handleClick = () => {
+    // 👇️ toggle
+    setIsActive(current => !current);
+
+    // 👇️ or set to true
+    // setIsActive(true);
+  };
 
   return (
     <DashboardLayout>
@@ -90,15 +97,22 @@ function Dashboard() {
                 />
               </MDBox>
             </Grid>
-          </Grid>
-        </MDBox>
-        <MDBox>
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={6} lg={8}>
-              <Projects />
-            </Grid>
             <Grid item xs={12} md={6} lg={4}>
-              <OrdersOverview />
+              <MDBox mb={3}>
+                <Button>
+                  <div>
+                    <div
+                      style={{
+                      backgroundColor: isActive ? 'green' : 'red',
+                      color: isActive ? 'green' : 'red',
+                      }}
+                    onClick={handleClick}
+                    >
+                    <img src={require("../../assets/images/tracteur.png")} width={325} height={325}/>
+                    </div>
+                  </div>
+                </Button>
+              </MDBox>
             </Grid>
           </Grid>
         </MDBox>
