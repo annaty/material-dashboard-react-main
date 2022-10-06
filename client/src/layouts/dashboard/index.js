@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable global-require */
 /**
 =========================================================
 * Material Dashboard 2 React - v2.1.0
@@ -12,6 +14,8 @@ Coded by www.creative-tim.com
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
+
+import "./dashboard.css";
 
 // @mui material components
 import Grid from "@mui/material/Grid";
@@ -30,6 +34,7 @@ import reportsBarChartData from "layouts/dashboard/data/reportsBarChartData";
 import reportsLineChartData from "layouts/dashboard/data/reportsLineChartData";
 
 // Dashboard components
+import Projects from "layouts/dashboard/components/Projects";
 import Button from "@mui/material/Button";
 import {useState} from 'react';
 
@@ -42,7 +47,7 @@ function Dashboard() {
 
   const handleClick = () => {
     // 👇️ toggle
-    setIsActive(current => !current);
+    setIsActive((current) => !current);
 
     // 👇️ or set to true
     // setIsActive(true);
@@ -50,7 +55,7 @@ function Dashboard() {
 
   const handleClick2 = () => {
     // 👇️ toggle
-    setIsActive2(current => !current);
+    setIsActive2((current) => !current);
 
     // 👇️ or set to true
     // setIsActive(true);
@@ -58,7 +63,7 @@ function Dashboard() {
 
   const handleClick3 = () => {
     // 👇️ toggle
-    setIsActive3(current => !current);
+    setIsActive3((current) => !current);
 
     // 👇️ or set to true
     // setIsActive(true);
@@ -112,57 +117,92 @@ function Dashboard() {
                 />
               </MDBox>
             </Grid>
+          </Grid>
+        </MDBox>
+        <MDBox>
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={6} lg={8}>
+              <Projects />
+            </Grid>
             <Grid item xs={12} md={6} lg={4}>
-              <MDBox mb={3}>
-                <Button>
-                  <div>
-                    <div
-                      style={{
-                      backgroundColor: isActive ? 'green' : 'red',
-                      color: isActive ? 'green' : 'red',
-                      }}
+              <div className="weather-widget">
+                <img alt="weather widget" src={require("../../assets/images/weather.png")} />
+              </div>
+            </Grid>
+          </Grid>
+        </MDBox>
+        <MDBox>
+          <Grid item xs={12} md={6} lg={4}>
+            <MDBox mb={3}>
+              <Button>
+                <div>
+                  <div
+                    tabIndex={0}
+                    role="button"
+                    style={{
+                      backgroundColor: isActive ? "green" : "red",
+                      color: isActive ? "green" : "red",
+                    }}
                     onClick={handleClick}
-                    >
-                    <img src={require("../../assets/images/tracteur.png")} width={325} height={325}/>
-                    </div>
+                  >
+                    <img
+                      src={require("../../assets/images/tracteur.png")}
+                      width={325}
+                      height={325}
+                      alt="tractor"
+                    />
                   </div>
-                </Button>
-              </MDBox>
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <MDBox mb={3}>
-                <Button>
-                  <div>
-                    <div
-                      style={{
-                      backgroundColor: isActive2 ? 'green' : 'red',
-                      color: isActive2 ? 'green' : 'red',
-                      }}
-                      onClick={handleClick2}
-                    >
-                    <img src={require("../../assets/images/pulverisateur.png")} width={325} height={325}/>
-                    </div>
+                </div>
+              </Button>
+            </MDBox>
+          </Grid>
+          <Grid item xs={12} md={6} lg={4}>
+            <MDBox mb={3}>
+              <Button>
+                <div>
+                  <div
+                    tabIndex={0}
+                    role="button"
+                    style={{
+                      backgroundColor: isActive2 ? "green" : "red",
+                      color: isActive2 ? "green" : "red",
+                    }}
+                    onClick={handleClick2}
+                  >
+                    <img
+                      src={require("../../assets/images/pulverisateur.png")}
+                      width={325}
+                      height={325}
+                      alt="irrigation"
+                    />
                   </div>
-                </Button>
-              </MDBox>
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <MDBox mb={3}>
-                <Button>
-                  <div>
-                    <div
-                      style={{
-                      backgroundColor: isActive3 ? 'green' : 'red',
-                      color: isActive3 ? 'green' : 'red',
-                      }}
-                      onClick={handleClick3}
-                    >
-                    <img src={require("../../assets/images/idee.png")} width={325} height={325}/>
-                    </div>
+                </div>
+              </Button>
+            </MDBox>
+          </Grid>
+          <Grid item xs={12} md={6} lg={4}>
+            <MDBox mb={3}>
+              <Button>
+                <div>
+                  <div
+                    tabIndex={0}
+                    role="button"
+                    style={{
+                      backgroundColor: isActive3 ? "green" : "red",
+                      color: isActive3 ? "green" : "red",
+                    }}
+                    onClick={handleClick3}
+                  >
+                    <img
+                      src={require("../../assets/images/idee.png")}
+                      width={325}
+                      height={325}
+                      alt="lightbulb"
+                    />
                   </div>
-                </Button>
-              </MDBox>
-            </Grid>
+                </div>
+              </Button>
+            </MDBox>
           </Grid>
         </MDBox>
       </MDBox>
