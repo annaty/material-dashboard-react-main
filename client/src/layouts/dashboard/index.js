@@ -37,10 +37,28 @@ function Dashboard() {
   const { sales, tasks, localDate } = reportsLineChartData;
 
   const [isActive, setIsActive] = useState(false);
+  const [isActive2, setIsActive2] = useState(false);
+  const [isActive3, setIsActive3] = useState(false);
 
   const handleClick = () => {
     // 👇️ toggle
     setIsActive(current => !current);
+
+    // 👇️ or set to true
+    // setIsActive(true);
+  };
+
+  const handleClick2 = () => {
+    // 👇️ toggle
+    setIsActive2(current => !current);
+
+    // 👇️ or set to true
+    // setIsActive(true);
+  };
+
+  const handleClick3 = () => {
+    // 👇️ toggle
+    setIsActive3(current => !current);
 
     // 👇️ or set to true
     // setIsActive(true);
@@ -106,6 +124,40 @@ function Dashboard() {
                     onClick={handleClick}
                     >
                     <img src={require("../../assets/images/tracteur.png")} width={325} height={325}/>
+                    </div>
+                  </div>
+                </Button>
+              </MDBox>
+            </Grid>
+            <Grid item xs={12} md={6} lg={4}>
+              <MDBox mb={3}>
+                <Button>
+                  <div>
+                    <div
+                      style={{
+                      backgroundColor: isActive2 ? 'green' : 'red',
+                      color: isActive2 ? 'green' : 'red',
+                      }}
+                      onClick={handleClick2}
+                    >
+                    <img src={require("../../assets/images/pulverisateur.png")} width={325} height={325}/>
+                    </div>
+                  </div>
+                </Button>
+              </MDBox>
+            </Grid>
+            <Grid item xs={12} md={6} lg={4}>
+              <MDBox mb={3}>
+                <Button>
+                  <div>
+                    <div
+                      style={{
+                      backgroundColor: isActive3 ? 'green' : 'red',
+                      color: isActive3 ? 'green' : 'red',
+                      }}
+                      onClick={handleClick3}
+                    >
+                    <img src={require("../../assets/images/idee.png")} width={325} height={325}/>
                     </div>
                   </div>
                 </Button>
